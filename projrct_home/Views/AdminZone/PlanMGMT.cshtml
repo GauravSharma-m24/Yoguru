@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "PlanMGMT";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+
+
+@model List<projrct_home.Models.Register_Table>
+<div class="row">
+    <table class="table table-bordered table-striped table-hover" style="margin-left:2%;">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+          
+            <th>Mobile</th>
+          
+            <th>Gender</th>
+           
+          
+          
+            <th>Plan</th>
+           
+
+          
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+            <td>@x.ID</td>
+            <td>@x.Name</td>
+           
+            <td>@x.Mobile</td>
+           
+            <td>@x.Gender</td>
+            
+           
+            
+         
+          
+           
+            <td>@x.CPlan</td>
+          
+        
+            </tr>
+        }
+    </table>
+</div>
+

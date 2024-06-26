@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/projectMaster.cshtml";
+}
+
+<div class="container">
+    <div class="row" style="margin-top:200px;">
+        <div class="col-md-12">
+        <h2>Registration Form</h2>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" >
+            <form action="/Home/Registration" method="post" enctype="multipart/form-data">
+                Enter Name: <br><input type="text" placeholder="Enter Name" name="Name"  class="form-control"><br><br>
+                Enter Email: <br><input type="email" placeholder="Enter Email" name="Email"  class="form-control"><br><br>
+                Enter Phone: <br><input type="number" placeholder="Number Daalo" name="Mobile" class="form-control"><br><br>
+                Select Gender: <br><input type="radio"  name="Gender" value="Male"> Male <br>
+                <input type="radio"  name="Gender" value="Female"> Female <br>
+                <input type="radio"  name="Gender" value="Others"> Others <br><br>
+                   Profile: <br><input type="file" name="Profile" class="form-control"><br><br>
+                Qualification: <br><input type="search" name="Qualification" list="Qualification" placeholder="--Select--" class="form-control">
+                <datalist id="Qualification">
+                    
+                    
+                    <option value="M.Tech"></option>
+                    <option value="Diploma"></option>
+                    <option value="B.Tech"></option>
+                       
+                </datalist><br><br>
+                   Address: <textarea cols="30" rows="10" name="Address" class="form-control" placeholder="Enter Address"></textarea><br><br>
+                 District: <br><input type="text" name="District" class="form-control"><br><br>
+                 DOB: <br><input type="date" name="DOB" class="form-control"><br><br>
+                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="reset" class="btn btn-warning">Reset</button>
+            </form>    
+        </div>
+    </div>
+</div>

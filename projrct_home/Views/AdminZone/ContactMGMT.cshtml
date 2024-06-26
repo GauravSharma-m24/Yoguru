@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "ContactMGMT";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+
+@model List<projrct_home.Models.TBL_Contact>
+<div class="row" >
+    <table  class="table table-bordered table-striped table-hover"  style="margin-left:2%; background-color:aliceblue;">
+        <tr>
+            <th>ID</th>
+             <th>Name</th>
+             <th>Email</th>
+             <th>Message</th>
+             <th>Contact Date</th>
+
+        </tr>
+        @foreach (var x in Model)
+        { 
+        <tr>
+            <td>@x.ID</td>
+             <td>@x.Name</td>
+             <td>@x.Email</td>
+             <td>@x.MSG</td>
+             <td>@x.Contactdate</td>
+        </tr>
+        }
+    </table>
+</div>

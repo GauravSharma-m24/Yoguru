@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JabbaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="JabbaEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Register_Table" EntityType="JabbaModel.Register_Table" />
+    <EntitySet Name="TBL_Contact" EntityType="JabbaModel.TBL_Contact" />
+    <EntitySet Name="Tbl_Feedback" EntityType="JabbaModel.Tbl_Feedback" />
+    <EntitySet Name="TBL_Login" EntityType="JabbaModel.TBL_Login" />
+    <EntitySet Name="Tbl_Registration" EntityType="JabbaModel.Tbl_Registration" />
+  </EntityContainer>
+  <EntityType Name="Register_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Street" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CW" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="DW" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CPlan" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Trainer" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Before" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Profile" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="RegDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBL_Contact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="MSG" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Contactdate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Feedback">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="MSG" Type="String" MaxLength="600" Unicode="false" FixedLength="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBL_Login">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Registration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="Profile" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Qualification" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="District" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RegDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

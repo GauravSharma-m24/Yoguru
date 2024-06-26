@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "UpdateRecord";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+@model projrct_home.Models.Register_Table
+<div class="container-fluid">
+     <div class="row">
+            <div class="col-md-12" style="min-height: 900px;background-image: url(/Content/images/yogaslider2.jpg);background-size: cover;background-attachment: fixed;">
+                <div class="row" style="background-color: rgba(0,0,0,0.7);  ">
+                    <div class="col-md-12" style="min-height:100px ;padding: 60px;"><center><b style="color: rgb(250, 140, 0); font-size: 40px; font-family: 'Game Of Squids';" class="service">BECOME A MEMBER</b></center></div>
+                </div>
+            <div class="row" style="min-height: 800px; background-color: rgba(0,0,0,0.7);">
+               
+                
+                <div class="col-md-2"></div>
+                <div class="col-md-7" style="min-height: 700px; margin-top: 40px;">
+                    <form action="/AdminZone/UpdateRecord" method="post" enctype="multipart/form-data" >
+                        <input type="hidden" name="Email" value="@Model.Email">
+                        <p style="color:rgb(213, 139, 0);">Your Name <b style="color: red;">*</b></p>
+                        <input type="text" name="Name" value="@Model.Name" placeholder="John Doe" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                      
+                        <p style="color:rgb(213, 139, 0);">Your Mobile Number <b style="color: red;">*</b></p>
+                        <input type="number" name="Mobile" value="@Model.Mobile" placeholder="9807654321" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Your DOB <b style="color: red;">*</b></p>
+                        <input type="date" name="DOB" value="@Model.DOB" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                       
+
+                     <span style="color: rgb(250, 140, 0)">Gender:</span><br>@{
+                         string Gender = Model.Gender.ToString();
+                         if(Gender=="Male")
+                         {
+                         <input type="radio" name="Gender" value="Male" checked="checked">
+                         <span style="color: wheat">Male</span><br>
+                          <input type="radio" name="Gender" value="Female" >
+                         <span style="color: wheat">Female</span><br>
+                          <input type="radio" name="Gender" value="Others" >
+                         <span style="color: wheat">Others</span><br><br>
+                         }
+                         else if(Gender=="Female")
+                         {
+                          <input type="radio" name="Gender" value="Male">
+                         <span style="color: wheat">Male</span><br>
+                          <input type="radio" name="Gender" value="Female" checked="checked" >
+                         <span style="color: wheat">Female</span><br>
+                          <input type="radio" name="Gender" value="Others" >
+                         <span style="color: wheat">Others</span><br><br>
+                         }
+                         else{
+                          <input type="radio" name="Gender" value="Male">
+                         <span style="color: wheat">Male</span><br>
+                          <input type="radio" name="Gender" value="Female" >
+                         <span style="color: wheat">Female</span><br>
+                          <input type="radio" name="Gender" value="Others" checked="checked"  >
+                         <span style="color: wheat">Others</span><br><br>
+                         }
+                              }
+                     
+                        <p style="color:rgb(213, 139, 0);" class="service"> Home Address <b style="color: red;">*</b></p>
+                        <p style="color:rgb(213, 139, 0);"> Street <b style="color: red;">*</b></p>
+                        <input type="text" name="Street" value="@Model.Street" placeholder="177a Bleecker Street" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Select City <b style="color: red;">*</b></p>
+                        <input type="text" placeholder="--Select--" value="@Model.City" list="city" name="City"  style="background-color: transparent; color: wheat; border: none;">
+                        <datalist id="city">
+                            
+                            <option value="Delhi" style="background-color: black; color: wheat; border: none;">DELHI</option>
+                            <option value="Lko" style="background-color: black; color: wheat; border: none;">LUCKNOW</option>
+                            <option value="Kanpur" style="background-color: black; color: wheat; border: none;">KANPUR</option>
+                            <option value="Gurugram" style="background-color: black; color: wheat; border: none;">GURUGRAM</option>
+                            <option value="New York" style="background-color: black; color: wheat; border: none;">NEW YORK</option>
+                            <option value="Brooklyn" style="background-color: black; color: wheat; border: none;">BROOKLYNN</option>
+                            <option value="London" style="background-color: black; color: wheat; border: none;">LONDON</option>
+                            <option value="Jaipur" style="background-color: black; color: wheat; border: none;">JAIPUR</option>
+                            <option value="Kolkata"style="background-color: black; color: wheat; border: none;"> KOLKATA</option>
+                            <option value="Gotham" style="background-color: black; color: wheat; border: none;">GOTHAM</option>
+                            <option value="Arrakis" style="background-color: black; color: wheat; border: none;">ARRAKIS</option>
+                        </datalist><br><br>
+                        <p style="color:rgb(213, 139, 0);">Select State <b style="color: red;">*</b></p>
+                        <input type="text" list="state" name="State" value="@Model.State" style="background-color: transparent; color: wheat; border: none;" placeholder="--Select--">
+                        <datalist id="state">
+                            <option value="Uttar Pradesh" style="background-color: black; color: wheat; border: none;">UTTAR PRADESH</option>
+                            <option value="Madhya Pradesh" style="background-color: black; color: wheat; border: none;">MADHYA PRADESH</option>
+                            <option value="WBengal" style="background-color: black; color: wheat; border: none;">WEST BENGAL</option>
+                            <option value="Rajasthan" style="background-color: black; color: wheat; border: none;">RAJASTHAN</option>
+                            <option value="Oklahama" style="background-color: black; color: wheat; border: none;">OKLAHAMA</option>
+                            <option value="Andhra Pradesh" style="background-color: black; color: wheat; border: none;">ANDHRA PRADESH</option>
+                         
+                        </datalist><br><br><br>
+                        <p style="color:rgb(213, 139, 0);" class="service">Personal Details <b style="color: red;">*</b></p>
+                        <p style="color:rgb(213, 139, 0);">Your Current Weight (lbs) <b style="color: red;">*</b></p>
+                        <input type="number" name="CW" value="@Model.CW" style="color: wheat;background-color: transparent;border: 1px solid wheat; height: 30px; width: 20%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Your Desired Weight (lbs) <b style="color: red;">*</b></p>
+                        <input type="number" name="DW" value="@Model.DW" style="color: wheat;background-color: transparent;border: 1px solid wheat; height: 30px; width: 20%;"><br><br>
+                       <span style="color:rgb(250, 140, 0)">CPlan:</span><br>@{
+                         string CPlan = Model.CPlan.ToString();
+                         if(CPlan=="Yoga Class")
+                         {
+                         <input type="radio" name="CPlan" value="Yoga Class" checked="checked">
+                         <span style="color: wheat">Yoga Class</span><br>
+                          <input type="radio" name="CPlan" value="Gym Class" >
+                         <span style="color: wheat">Gym Class</span><br>
+                          <input type="radio" name="CPlan" value="Membership" >
+                         <span style="color: wheat">Membership</span><br>
+                         }
+                         else if(CPlan=="Gym Class")
+                         {
+                           <input type="radio" name="CPlan" value="Yoga Class" >
+                         <span style="color: wheat">Yoga Class</span><br>
+                          <input type="radio" name="CPlan" value="Gym Class" checked="checked" >
+                         <span style="color: wheat">Gym Class</span><br>
+                          <input type="radio" name="CPlan" value="Membership" >
+                         <span style="color: wheat">Membership</span><br>
+                         }
+                         else{
+                          <input type="radio" name="CPlan" value="Yoga Class" >
+                         <span style="color: wheat">Yoga Class</span><br>
+                          <input type="radio" name="CPlan" value="Gym Class" >
+                         <span style="color: wheat">Gym Class</span><br>
+                          <input type="radio" name="CPlan" value="Membership" checked="checked">
+                         <span style="color: wheat">Membership</span><br><br>
+                         }
+                              }
+          <span style="color: rgb(250, 140, 0)">Trainer:</span><br>@{
+                         string Trainer = Model.Trainer.ToString();
+                         if(Trainer=="Yes")
+                         {
+                         <input type="radio" name="Trainer" value="Yes" checked="checked">
+                         <span style="color: wheat">Yes</span><br>
+                          <input type="radio" name="Trainer" value="No" >
+                         <span style="color: wheat">No</span><br><br>
+                        
+                         }
+                      
+                         else{
+                          <input type="radio" name="Trainer" value="Yes" >
+                         <span style="color: wheat">Yes</span><br>
+                          <input type="radio" name="CPlan" value="No"  checked="checked">
+                         <span style="color: wheat">No</span><br><br>
+                         
+                              }
+                              }
+            <span style="color: rgb(250, 140, 0)">Before:</span><br>@{
+                         string Before = Model.Before.ToString();
+                         if(Before=="Yes")
+                         {
+                         <input type="radio" name="Before" value="Yes" checked="checked">
+                         <span style="color: wheat">Yes</span><br>
+                          <input type="radio" name="Before" value="No" >
+                         <span style="color: wheat">No</span><br>
+                        
+                         }
+                      
+                         else{
+                          <input type="radio" name="Before" value="Yes" >
+                         <span style="color: wheat">Yes</span><br>
+                          <input type="radio" name="Before" value="No"  checked="checked">
+                         <span style="color: wheat">No</span><br><br>
+                         
+                              }
+                              }
+           <p style="color:rgb(213, 139, 0);">Upload Your Meaurements<b style="color: red;">*</b></p>
+                        <img src="~/Content/IMG/@Model.Profile" height="40" width="40"><br>
+                        <input type="file" name="Profile" style="background-color:transparent;"><br><br>
+                        
+                    <button type="submit" class="btn btn-success" style="margin-top: 10px; margin-left: 4%;">SUBMIT</button>
+                   
+                         
+               
+                    </form>
+                </div>
+              
+                <div class="col-md-1"></div>
+            </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/projectMaster.cshtml";
+}
+<script>
+    function getCaptcha()
+    {
+        var strArr = "0123456789qwertyuioplkjhgfdsa";
+        var code = "";
+        for (var i = 0; i < 5; i++)
+        {
+            code = code + strArr[Math.floor(Math.random() * 20)];
+        }
+        return code;
+    }
+    function demo()
+    {
+        var c = getCaptcha();
+        document.getElementById("ct1").innerHTML = c;
+        document.getElementById("hdn1").value = c;
+    }
+</script>
+<div class="container-fluid">
+     <div class="row">
+            <div class="col-md-12" style="min-height: 900px;background-image: url(/Content/images/yogaslider2.jpg);background-size: cover;background-attachment: fixed;">
+                <div class="row" style="background-color: rgba(0,0,0,0.7); margin-top:110px ">
+                    <div class="col-md-12" style="min-height:100px ;padding: 60px;"><center><b style="color: rgb(250, 140, 0); font-size: 40px; font-family: 'Game Of Squids';" class="service">BECOME A MEMBER</b></center></div>
+                </div>
+            <div class="row" style="min-height: 800px; background-color: rgba(0,0,0,0.7);">
+               
+                
+                <div class="col-md-2"></div>
+                <div class="col-md-7" style="min-height: 700px; margin-top: 40px;">
+                    <form action="/Home/Register" method="post" enctype="multipart/form-data" >
+                        <p style="color:rgb(213, 139, 0);">Your Name <b style="color: red;">*</b></p>
+                        <input type="text" name="Name" placeholder="John Doe" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Your Email <b style="color: red;">*</b></p>
+                        <input type="email" name="Email" placeholder="abcd@gmail.com" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Your Mobile Number <b style="color: red;">*</b></p>
+                        <input type="number" name="Mobile" placeholder="9807654321" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Your DOB <b style="color: red;">*</b></p>
+                        <input type="date" name="DOB" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Your Gender <b style="color: red;">*</b></p>
+
+           <input type="radio" name="Gender" value="male" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Male</i>
+           <input type="radio" name="Gender" value="female" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Female</i>
+           <input type="radio" name="Gender" value="others" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Others</i><br><br><br>
+                     
+                        <p style="color:rgb(213, 139, 0);" class="service"> Home Address <b style="color: red;">*</b></p>
+                        <p style="color:rgb(213, 139, 0);"> Street <b style="color: red;">*</b></p>
+                        <input type="text" name="Street" placeholder="177a Bleecker Street" style="color: wheat;background-color: transparent;border: none; border-bottom: 1px solid wheat; height: 30px; width: 40%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Select City <b style="color: red;">*</b></p>
+                        <input type="text" placeholder="--Select--" list="city" name="City"  style="background-color: transparent; color: wheat; border: none;">
+                        <datalist id="city">
+                            
+                            <option value="Delhi" style="background-color: black; color: wheat; border: none;">DELHI</option>
+                            <option value="Lko" style="background-color: black; color: wheat; border: none;">LUCKNOW</option>
+                            <option value="Kanpur" style="background-color: black; color: wheat; border: none;">KANPUR</option>
+                            <option value="Gurugram" style="background-color: black; color: wheat; border: none;">GURUGRAM</option>
+                            <option value="New York" style="background-color: black; color: wheat; border: none;">NEW YORK</option>
+                            <option value="Brooklyn" style="background-color: black; color: wheat; border: none;">BROOKLYNN</option>
+                            <option value="London" style="background-color: black; color: wheat; border: none;">LONDON</option>
+                            <option value="Jaipur" style="background-color: black; color: wheat; border: none;">JAIPUR</option>
+                            <option value="Kolkata"style="background-color: black; color: wheat; border: none;"> KOLKATA</option>
+                            <option value="Gotham" style="background-color: black; color: wheat; border: none;">GOTHAM</option>
+                            <option value="Arrakis" style="background-color: black; color: wheat; border: none;">ARRAKIS</option>
+                        </datalist><br><br>
+                        <p style="color:rgb(213, 139, 0);">Select State <b style="color: red;">*</b></p>
+                        <input type="text" list="state" name="State"  style="background-color: transparent; color: wheat; border: none;" placeholder="--Select--">
+                        <datalist id="state">
+                            <option value="Uttar Pradesh" style="background-color: black; color: wheat; border: none;">UTTAR PRADESH</option>
+                            <option value="Madhya Pradesh" style="background-color: black; color: wheat; border: none;">MADHYA PRADESH</option>
+                            <option value="WBengal" style="background-color: black; color: wheat; border: none;">WEST BENGAL</option>
+                            <option value="Rajasthan" style="background-color: black; color: wheat; border: none;">RAJASTHAN</option>
+                            <option value="Oklahama" style="background-color: black; color: wheat; border: none;">OKLAHAMA</option>
+                            <option value="Andhra Pradesh" style="background-color: black; color: wheat; border: none;">ANDHRA PRADESH</option>
+                         
+                        </datalist><br><br><br>
+                        <p style="color:rgb(213, 139, 0);" class="service">Personal Details <b style="color: red;">*</b></p>
+                        <p style="color:rgb(213, 139, 0);">Your Current Weight (lbs) <b style="color: red;">*</b></p>
+                        <input type="number" name="CW" style="color: wheat;background-color: transparent;border: 1px solid wheat; height: 30px; width: 20%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Your Desired Weight (lbs) <b style="color: red;">*</b></p>
+                        <input type="number" name="DW" style="color: wheat;background-color: transparent;border: 1px solid wheat; height: 30px; width: 20%;"><br><br>
+                        <p style="color:rgb(213, 139, 0);">Choose Plan <b style="color: red;">*</b></p>
+                        <input type="radio" name="CPlan"  value="YogaClass" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Yoga Classes</i><br>
+           <input type="radio" name="CPlan" value="GymClass" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Gym Classes</i><br>
+           <input type="radio" name="CPlan" value="Member" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Membership</i><br><br>
+           <p style="color:rgb(213, 139, 0);">Do You Need a Personal Trainer ? <b style="color: red;">*</b></p>
+           <input type="radio" name="Trainer" value="Yes" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">YES</i><br>
+           <input type="radio" name="Trainer" value="No" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">NO</i><br><br>
+           <p style="color:rgb(213, 139, 0);">Have you been in a Gym before ? <b style="color: red;">*</b></p>
+           <input type="radio" name="Before" value="Yes" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">YES</i><br>
+           <input type="radio" name="Before" value="No" style="color: wheat;background-color: transparent; margin-left: 4%;">
+           <i style="color: wheat; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">NO</i><br><br>
+           <p style="color:rgb(213, 139, 0);">Upload Your Meaurements<b style="color: red;">*</b></p>
+                        <input type="file" name="Profile" style="background-color:transparent;"><br><br>
+                          <p style="color:rgb(213, 139, 0);">Captcha Code :</p>
+                          <span style="color:lavenderblush; font-size:20px;"><strike id="ct1">drf4h</strike></span> 
+                        <span class="fa fa-refresh" style="color:lavenderblush; font-size:20px;cursor:pointer; margin-left:3%;" onclick="demo()"></span><br><br>
+                        <input type="text" name="ct1">
+                        <input type="hidden" placeholder="Enter Captcha" id="hdn1" name="hdn1" >
+                    <button type="submit" class="btn btn-success" style="margin-top: 10px; margin-left: 4%;">SUBMIT</button>
+                   
+                         
+               
+                    </form>
+                </div>
+              
+                <div class="col-md-1"></div>
+            </div>
+            </div>
+        </div>
+    </div>

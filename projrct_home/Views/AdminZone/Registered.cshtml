@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Registered";
+    Layout = "~/Views/Shared/adminmaster.cshtml";
+}
+
+@model List<projrct_home.Models.Register_Table>
+<div class="row">
+    <table  class="table table-bordered table-striped table-hover" style="margin-left:2%;background-color:aliceblue;">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Current Weight</th>
+            <th>Desired Weight</th>
+            <th>Profile</th>
+            <th>Plan</th>
+            <th>Trainer</th>
+            <th>Before</th>
+           
+
+            <th>RegistrationDate</th>
+              <th>Add</th>
+             <th>Delete</th>
+             <th>Update</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+            <td>@x.ID</td>
+            <td>@x.Name</td>
+            <td>@x.Email</td>
+            <td>@x.Mobile</td>
+            <td>@x.DOB</td>
+            <td>@x.Gender</td>
+            <td>@x.Street</td>
+            <td>@x.City</td>
+            <td>@x.State</td>
+            <td>@x.CW</td>
+            <td>@x.DW</td>
+          
+            <td><img src="~/Content/IMG/@x.Profile" height="50" width="50"></td>
+            <td>@x.CPlan</td>
+          
+            <td>@x.Trainer</td>
+            <td>@x.Before</td>
+            <td>@x.RegDate</td>
+              <td><a href="#"><center><span class="fa fa-plus" style="text-align:center;font-size:25px; margin-top:15px; color:lawngreen"></span></center></a></td>
+            <td><a href="/AdminZone/Delete?m=@x.Email"><center><span class="fa fa-trash" style="font-size:25px; margin-top:15px;color:rosybrown;"></span></center></a></td>
+            <td><a href="/AdminZone/UpdateRecord?U=@x.Email"><center><span class="fa fa-edit" style="text-align:center;font-size:25px; margin-top:15px;"></span></center></a></td>
+            </tr>
+        }
+    </table>
+</div>

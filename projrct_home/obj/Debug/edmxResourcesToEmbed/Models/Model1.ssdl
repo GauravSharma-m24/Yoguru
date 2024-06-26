@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JabbaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="JabbaModelStoreContainer">
+    <EntitySet Name="Register_Table" EntityType="JabbaModel.Store.Register_Table" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Contact" EntityType="JabbaModel.Store.TBL_Contact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Feedback" EntityType="JabbaModel.Store.Tbl_Feedback" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Login" EntityType="JabbaModel.Store.TBL_Login" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Registration" EntityType="JabbaModel.Store.Tbl_Registration" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Register_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="DOB" Type="varchar" MaxLength="15" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" />
+    <Property Name="Street" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="CW" Type="varchar" MaxLength="20" />
+    <Property Name="DW" Type="varchar" MaxLength="20" />
+    <Property Name="CPlan" Type="varchar" MaxLength="20" />
+    <Property Name="Trainer" Type="varchar" MaxLength="10" />
+    <Property Name="Before" Type="varchar" MaxLength="10" />
+    <Property Name="Profile" Type="varchar(max)" />
+    <Property Name="RegDate" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_Contact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="MSG" Type="varchar" MaxLength="500" />
+    <Property Name="Contactdate" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Feedback">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="MSG" Type="varchar" MaxLength="600" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_Login">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="300" />
+    <Property Name="Password" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Tbl_Registration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="300" />
+    <Property Name="Profile" Type="varchar(max)" />
+    <Property Name="Qualification" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="varchar" MaxLength="50" />
+    <Property Name="RegDate" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

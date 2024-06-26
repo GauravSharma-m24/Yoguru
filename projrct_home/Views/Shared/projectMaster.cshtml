@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>YOGURU:: Gym and Yoga Club</title>
+      <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/Content/css/aos.css">
+        <link rel="stylesheet" href="~/Content/css/style.css">
+        <link rel="stylesheet" href="~/Content/assets/vendor/icofont/icofont.min.css">
+        <link rel="stylesheet" href="~/Content/Bootstrap3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Bootstrap3/css/hover-min.css">
+        <script src="~/Content/Bootstrap3/js/jquery.js"></script>
+        <script src="~/Content/Bootstrap3/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/menuhover.css" rel="stylesheet" />
+    <link href="~/Content/images/1693801741052.png" rel="icon" />
+     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #menuicon{
+            font-size: 30px;
+            color: rgb(202, 131, 0);
+            margin-top: 30px;
+            margin-left: 10%;
+        }
+        nav ul li{
+            
+            font-size:3rem;
+           
+        }
+       /*nav ul li a:hover{
+        background-color: black;
+       }*/
+       #icon{
+                font-size: 20px;
+                margin-top: 20px;
+                margin-left: 10%;
+            }
+            #input{
+                margin-left: 10%;
+                height: 20px;
+                width: 70%;
+                border: none;
+                border-bottom: 2px solid black;
+                margin-top: 20px;
+            }
+            #row{
+                margin-top: 30px;
+            }
+          #joinimg{
+            margin-left: 35%;
+            margin-top: 40px;
+        }
+          #plans {
+transition:.5s ease;
+}
+    #plans:hover {
+    box-shadow:0 0 0 10px wheat;
+    transition:.5s ease;
+    }
+         #log li a {
+         text-decoration:none;
+         font-family:sans-serif;
+         font-size:15px;
+         }
+         #log li a:hover {
+             background-color:black;
+             color:wheat;
+         }
+         .imggallery img {
+         filter:grayscale(100%);
+         -webkit-filter:grayscale(100%);
+         -webkit-transition:all 1s ease;
+         
+         }
+         .imggallery img:hover {
+            filter:grayscale(0%);
+            filter:gray;
+
+         -webkit-filter:grayscale(0%);
+         filter:none;
+         transition:all 1s ease;
+         
+         }
+    </style>
+  
+</head>
+<body>
+      <header id="header" class="fixed-top" style="background:linear-gradient(black,transparent);">
+        <div class="row" style="background-color: black; margin-top: -17px;">
+            <div class="col-md-5" style="min-height: 80px; color: antiquewhite;">
+                <img src="~/Content/images/yogurulogo.png" style="height:120px;width:260px;margin-left:10%;" />
+            </div>
+            <div class="col-md-6" style="margin-top:5px;min-height: 80px;">
+                <span id="menuicon" class="fa fa-facebook"></span>
+                <span id="menuicon" class="fa fa-instagram"></span>
+                <span id="menuicon" class="fa fa-twitter"></span>
+                <span id="menuicon" class="fa fa-envelope"></span>
+                <span id="menuicon" class="fa fa-youtube"></span>
+        </div>
+               <div class="col-md-1">
+               <a href="/Home/SignUP"> <input class="hover" type="button" style="margin-top:15px;background-color: transparent; height: 50px;margin-bottom: 25px; border: none; color: rgb(202, 131, 0); font-size: 20px;font-family: sans-serif;" value="SignUp"></a></div>
+               </div>
+
+        
+        <div class="container d-flex">
+          
+            <!-- <h1 class="logo mr-auto" style="color: rgb(6, 100, 100);">STUDYPOINT</h1> -->
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active" id="nav"><a href="#"></a></li>
+                    <li ><a href="/Home/Index" style="color: rgb(202, 131, 0); text-decoration: none;margin-left:60px;"class="hover">HOME</a></li>
+                    
+                      <li class="drop-down"><a href="#" style="color: rgb(202, 131, 0); text-decoration: none;margin-left:60px;" class="hover">GALLERY</a>
+                         <ul id="log" style=" background-color:wheat; color:black">
+                              <li><a href="/Home/Image" >Image Gallery</a></li>
+                              <li><a href="/Home/Video"  >Video Gallery</a></li>
+                         </ul>
+                     </li>
+                 
+                    <li><a href="/Home/Contact" style="color: rgb(202, 131, 0); text-decoration: none;margin-left:60px; "class="hover">CONTACT</a></li>
+                    <li><a href="#" style="color: rgb(202, 131, 0); text-decoration: none;margin-left:60px; "class="hover">SERVICES</a></li>
+                    <li><a href="/Home/Register" style="color: rgb(202, 131, 0); text-decoration: none;margin-left:60px; "class="hover">REGISTER</a></li>
+                   
+                     <li class="drop-down"><a href="#" style="color: rgb(202, 131, 0); text-decoration: none;margin-left:60px;" class="hover">LOGIN</a>
+                         <ul id="log" style=" background-color:wheat; color:black">
+                              <li><a href="#" >User LogIn</a></li>
+                              <li><a href="/Home/LogIn"  >Admin LogIn</a></li>
+                         </ul>
+                     </li>
+                 
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+        @RenderBody()
+        <script src="~/Content/js/jquery.min.js"></script>
+        <script src="~/Content/js/jquery.waypoints.min.js"></script>
+        <script src="~/Content/js/counterup.min.js"></script>
+        <script src="~/Content/js/owl.carousel.min.js"></script>
+        <script src="~/Content/js/aos.js"></script>
+        <script src="~/Content/js/main.js"></script>
+</body>
+</html>

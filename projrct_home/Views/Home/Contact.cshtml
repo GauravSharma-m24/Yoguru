@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/projectMaster.cshtml";
+}
+
+<div class="container-fluid" style="">
+     <div class="row">
+         <div class="col-md-12" style="min-height:970px;background-image:url(/Content/images/contact.jpg);background-size:cover;background-attachment:fixed;">
+             <div class="row">
+                 <div class="col-md-12" style="background-color:rgba(0, 0, 0,0.5);min-height:970px;">
+    <div class="row" style="min-height:100px; margin-top:180px;">
+    
+         <div class="col-md-12">
+           <center><b style="font-family:'Game Of Squids'; color:rgb(255, 106, 0); font-size:40px;" class="service">CONTACT PAGE</b></center>
+            
+         </div>
+       
+    </div>
+    <div class="row" style="min-height:100px; margin-top:5px;">
+        <div class="col-md-3"></div>
+         <div class="col-md-6"><br><br>
+           <form action="/Home/Contact" method="post">
+               <b style="color:wheat;font-size:15px;font-family:'Segoe UI'">Enter Your Name</b><br><br>
+               <input type="text" placeholder="Enter Name" name="Name" class="form-control" style="background-color:transparent;color:rgb(255, 216, 0);"><br><br>
+
+               <b style="color:wheat;font-size:15px;font-family:'Segoe UI'" >Enter Your Email</b><br><br>
+               <input type="email" placeholder="Enter Email" name="Email" class="form-control"  style="background-color:transparent;color:rgb(255, 216, 0);"><br><br>
+
+                <b style="color:wheat;font-size:17px;font-family:'Segoe UI'" >Leave Your Message</b><br><br>
+               <textarea cols="30" rows="10" name="MSG" class="form-control" placeholder="Text Here..."  style="background-color:transparent;color:rgb(255, 216, 0);font-size:15px;" ></textarea><br><br>
+                 
+               <button type="submit" class=" btn btn-success" >SUBMIT</button>
+               <button type="reset" class=" btn btn-warning" >RESET</button>
+              
+
+           </form>
+         </div>
+         <div class="col-md-3"></div>
+    </div>
+</div>
+ </div>
+             </div>
+    </div>
+    </div>
